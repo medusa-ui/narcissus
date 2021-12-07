@@ -1,0 +1,158 @@
+html {
+    background: white;
+    color: #0c0a0a;
+    min-height: 100%;
+}
+h1, h2, #get-started, p.learn-more {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+}
+h2, #black-bg h1 {
+    font-size: 3em;
+    line-height: 1.6em;
+}
+#get-started {
+    font-size: 2em;
+}
+p.learn-more {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-left: 0.5em;
+    margin-bottom: 2em;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    background: black;
+}
+#white-bg {
+    background: white;
+}
+#white-bg, #black-bg {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 10em;
+}
+p.blurp {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    max-width: 76rem;
+    padding-left: 0.5em;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+p.blurp-details {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    max-width: 80rem;
+    padding-left: 0.5em;
+    opacity: 0.9;
+    letter-spacing: 0.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.reference {
+    color: cyan;
+    background: black;
+    padding: 0.25em;
+}
+a.reference-link:link, a.reference-link:visited, a.reference-link:active {
+    color: #0c0a0a;
+}
+a.reference-link:hover {
+    color: cyan;
+    background: black;
+    border-bottom: 5px solid black;
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+    border-top: 3px solid black;
+
+    transition-property: background, color, border;
+    transition-duration: 250ms;
+}
+.reference-link {
+    text-decoration: none;
+    border-bottom: 5px solid cyan;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 3px solid transparent;
+}
+.code,.example {
+    font-family: 'Fira Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: black;
+    color: #68ffff;
+    padding: 1.5em;
+    max-width: 45rem;
+}
+.code span.line {
+    display: block;
+}
+.code span.t1 {
+    padding-left:2em;
+}
+.code span.t2 {
+    padding-left:3em;
+}
+.code span.t3 {
+    padding-left:4em;
+}
+.code span.tag {
+    color: gray;
+}
+.code span.tag-content {
+    color: #ffef81;
+}
+.code span.tag-medusa{
+    color: #e346ff;
+}
+.code span.annotation {
+    color: #a4fff7;
+}
+.m-top {
+    margin-top: 2em;
+    padding-bottom: 0.25em;
+}
+.m-top-section {
+    margin-top: 1em;
+    padding-bottom: 0.25em;
+}
+#black-bg {
+    background: black;
+    color: white;
+}
+#black-bg a.reference-link:link, #black-bg a.reference-link:visited, #black-bg a.reference-link:active {
+    color: cyan;
+    background: black;
+}
+#black-bg a.reference-link:hover {
+    color: orange;
+}
+
+.example {
+    display: flex;
+    width: 80rem;
+    margin:0;
+    padding:0;
+    max-width: 100% !important;
+}
+.example .left, .example .right {
+    max-width: 100% !important;
+}
+.example .left {
+    order: 1;
+}
+.example .right {
+     order: 2;
+}
