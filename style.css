@@ -62,7 +62,7 @@ p.blurp-details {
     -moz-osx-font-smoothing: grayscale;
 }
 .reference {
-    color: cyan;
+    color: #00ff5a;
     background: black;
     padding: 0.25em;
 }
@@ -70,7 +70,7 @@ a.reference-link:link, a.reference-link:visited, a.reference-link:active {
     color: #0c0a0a;
 }
 a.reference-link:hover {
-    color: cyan;
+    color: #00ff5a;
     background: black;
     border-bottom: 5px solid black;
     border-left: 10px solid black;
@@ -82,7 +82,7 @@ a.reference-link:hover {
 }
 .reference-link {
     text-decoration: none;
-    border-bottom: 5px solid cyan;
+    border-bottom: 5px solid #00ff5a;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
     border-top: 3px solid transparent;
@@ -133,7 +133,7 @@ a.reference-link:hover {
     color: white;
 }
 #black-bg a.reference-link:link, #black-bg a.reference-link:visited, #black-bg a.reference-link:active {
-    color: cyan;
+    color: #00ff5a;
     background: black;
 }
 #black-bg a.reference-link:hover {
