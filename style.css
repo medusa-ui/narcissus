@@ -85,3 +85,21 @@ a.reference-link:hover {
 	border-right: 2px solid transparent;
 	border-top: 3px solid transparent;
 }
+
+canvas{
+	display: block;
+	vertical-align: bottom;
+}
+
+#particles-js{
+	position: absolute;
+	left: 0;
+	z-index: -1;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #11131f;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
