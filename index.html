@@ -5,90 +5,25 @@
     <title>Medusa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Fira+Sans:wght@300;400&family=Inter:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Inter:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<section id="white-bg">
-    <br>
-    <h1>Medusa</h1>
-    <h2><span class="reference">Micro frontends</span> in Java built on <a href="https://spring.io/reactive" target="_blank" class="reference-link">Reactive Spring</a></h2>
-    <p class="blurp">
-        Combine microservices into a cohesive experience with: non-blocking, bi-directional WebSocket communication, integrated security,
-    automatic service discovery and A/B testing.
-    </p>
+    <h1><span class="reference">Micro frontends</span> in Java built on <a href="https://spring.io/reactive" target="_blank" class="reference-link">Reactive Spring</a></h1>
 
-    <p id="get-started"><a href="https://spring.io/reactive" class="reference-link">Get started</a></p>
-
-    <div class="maven-get-started code">
-        <span class="line"><span class="tag">&lt;</span>dependency<span class="tag">&gt;</span></span>
-        <span class="line t1"><span class="tag">&lt;</span>groupId<span class="tag">&gt;</span><span class="tag-content">io.getmedusa</span><span class="tag">&lt;/</span>groupId<span class="tag">&gt;</span></span>
-        <span class="line t1"><span class="tag">&lt;</span>artifactId<span class="tag">&gt;</span><span class="tag-content">medusa-ui</span><span class="tag">&lt;/</span>artifactId<span class="tag">&gt;</span></span>
-        <span class="line t1"><span class="tag">&lt;</span>version<span class="tag">&gt;</span><span class="tag-content">1.0.3</span><span class="tag">&lt;/</span>version<span class="tag">&gt;</span></span>
-        <span class="line"><span class="tag">&lt;/</span>dependency<span class="tag">&gt;</span></span>
-        <br/>
-        <span class="line"><span class="tag">&lt;</span>dependency<span class="tag">&gt;</span></span>
-        <span class="line t1"><span class="tag">&lt;</span>groupId<span class="tag">&gt;</span><span class="tag-content">org.springframework.boot</span><span class="tag">&lt;/</span>groupId<span class="tag">&gt;</span></span>
-        <span class="line t1"><span class="tag">&lt;</span>artifactId<span class="tag">&gt;</span><span class="tag-content">spring-boot-starter-webflux</span><span class="tag">&lt;/</span>artifactId<span class="tag">&gt;</span></span>
-        <span class="line"><span class="tag">&lt;/</span>dependency<span class="tag">&gt;</span></span>
-    </div>
-</section>
-<section id="black-bg">
-    <h1 class="m-top-section"><span class="reference">🦑</span> Next-generation UI framework</h1>
-    <p class="blurp-details">Pages are simply written in HTML and enhanced with expressions to allow for efficient DOM rewrites. Interactivity is handled serverside through WebSockets. The event-driven serverside code is written around non-blocking Spring Reactive.</p>
-    <p class="blurp-details">That means, for example, you get the following for free: </p>
-    <p class="blurp-details">- Clicking a button triggers an immediate event on the server</p>
-    <p class="blurp-details">- A database change is reflected on the page without AJAX</p>
-
-    <section class="example">
-        <div class="left code">
-            <span class="line"><span class="tag">&lt;</span>!DOCTYPE <span class="annotation">html</span><span class="tag">&gt;</span></span>
-            <span class="line"><span class="tag">&lt;</span>html lang=&quot;en&quot;<span class="tag">&gt;</span></span>
-                <span class="line t1"><span class="tag">&lt;</span>body<span class="tag">&gt;</span></span>
-                    <span class="line t2"><span class="tag">&lt;</span>h1<span class="tag">&gt;</span><span class="tag-content">Hello </span><span class="tag-medusa">[$name]</span><span class="tag">&lt;/</span>h1<span class="tag">&gt;</span></span>
-                    <span class="line t2"><span class="tag">&lt;</span>p<span class="tag">&gt;</span><span class="tag-content">Counter: </span><span class="tag-medusa">[$my-counter]</span><span class="tag">&lt;/</span>p<span class="tag">&gt;</span></span>
-                    <span class="line t2"><span class="tag">&lt;</span>button <span class="tag-medusa">m-click=&quot;increase(1)&quot;</span><span class="tag">&gt;</span><span class="tag-content">Increase value</span><span class="tag">&lt;/</span>button<span class="tag">&gt;</span></span>
-                <span class="line t1"><span class="tag">&lt;/</span>body<span class="tag">&gt;</span></span>
-            <span class="line"><span class="tag">&lt;/</span>html<span class="tag">&gt;</span></span>
-        </div>
-
-        <div class="right code">
-            <span class="line"><span class="annotation">@UIEventPage</span><span class="tag">(</span>path=<span class="tag-content">"/hello"</span>, file=<span class="tag-content">"pages/index.html"</span><span class="tag">)</span></span>
-            <span class="line">public class <span class="tag">EventHandler</span> implements <span class="tag">UIEventController</span> <span class="tag">{</span>
-            <span class="line"><br></span>
-                <span class="line t1">private <span class="annotation">int</span> <span class="tag-content">count</span> <span class="tag">=</span> <span class="tag-content">0</span><span class="tag">;</span></span>
-                <span class="line"><br></span>
-                <span class="line t1"><span class="annotation">@Override</span></span>
-                <span class="line t1">public <span class="tag-medusa">PageAttributes</span> setupAttributes<span class="tag">() {</span></span>
-                <span class="line t2">return <span class="annotation">new</span> <span class="tag-medusa">PageAttributes()</span></span>
-                    <span class="line t3"><span class="tag">.</span>with<span class="tag">(</span><span class="tag-content">&quot;name&quot;</span><span class="tag">,</span> <span class="tag-content">&quot;안녕하세요 세계&quot;</span><span class="tag">)</span></span>
-                    <span class="line t3"><span class="tag">.</span>with<span class="tag">(</span><span class="tag-content">&quot;my-counter&quot;</span><span class="tag">,</span> <span class="tag-content">count</span><span class="tag">)</span></span>
-                <span class="line t1">}</span>
-                <span class="line"><br></span>
-                <span class="line t1">public <span class="tag-medusa">DOMChanges</span> increase<span class="tag">(</span><span class="annotation">int</span> increaseByThisMuch<span class="tag">) {</span></span>
-                    <span class="line t2"><span class="tag-content">count</span> <span class="tag">+=</span> <span class="tag-content">increaseByThisMuch</span><span class="tag">;</span></span>
-                    <span class="line t2">return <span class="tag-medusa">DOMChanges</span><span class="tag">.</span>of<span class="tag">(</span><span class="tag-content">&quot;my-counter&quot;</span><span class="tag">,</span> <span class="tag-content">count</span><span class="tag">);</span></span>
-                <span class="line t1">}</span>
-            <span class="line">}</span>
-        </div>
+    <section id="buttons">
+        <a class="main" href="https://github.com/medusa-ui">Github repo</a>
+        <a class="alt" href="https://medusa-ui.gitbook.io/docs/">Documentation</a>
     </section>
 
-    <p class="learn-more"><a href="https://spring.io/reactive" class="reference-link">Learn more ></a></p>
+    <p>Combine microservices into a cohesive experience with: non-blocking, bidirectional WebSocket communication, integrated security, automatic service discovery and A/B testing.</p>
 
-    <h1 class="m-top"><span class="reference">🐲</span> Hydra for modularity</h1>
-    <p class="blurp-details">Easy-to-use entry point gateway proxy that allows you to deploy frontends modularly. Hydra is a ready-for-use combination of a gateway with service discovery, load balancing, and JWT security. It uses proven frameworks like Spring Cloud Gateway and Spring Load Balancer behind the scenes but streamlines their setup.</p>
-    <p class="blurp-details">That means, for example, you get the following for free: </p>
-    <p class="blurp-details">- Dynamic menus based on what services are up</p>
-    <p class="blurp-details">- Users can login once and seamlessly get logged into the respective microservice</p>
+    <p><strong>Medusa</strong> is a next-generation, easy-to-use, enterprise-ready micro-frontend UI framework in HTML/CSS and Java. Blazingly fast, modern feel and simple to write.</p>
+    <p>Combine with <strong>Hydra</strong> for modularity. Hydra is a combination of a gateway with service discovery, load balancing, and JWT security. It uses proven frameworks like Spring Cloud Gateway and Spring Load Balancer behind the scenes but streamlines their setup.</p>
 
-    <section class="example">
-        <div class="left">
-
-        </div>
-        <div class="right"></div>
+    <section style="display: flex; /* or inline-flex */">
+        <iframe width="560" height="315" src="//www.youtube.com/embed/bbZO1FgLSUY?autoplay=0&mute=1&rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="//www.youtube.com/embed/RHFn0LW7bqw?autoplay=0&mute=1&rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1" frameborder="0" allowfullscreen></iframe>
     </section>
-
-    <p class="learn-more"><a href="https://spring.io/reactive" class="reference-link">Learn more ></a></p>
-</section>
 </body>
 </html>
