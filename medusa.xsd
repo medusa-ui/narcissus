@@ -1,0 +1,78 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="https://medusa-ui.dev">
+    <xs:element name="body">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element name="text">
+                        <xs:complexType>
+                            <xs:attribute name="item" type="xs:string" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="foreach">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="text">
+                                    <xs:complexType>
+                                        <xs:attribute name="item" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="if">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="text">
+                                                <xs:complexType>
+                                                    <xs:attribute name="item" type="xs:string" use="required"/>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="elseif">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="text">
+                                                            <xs:complexType>
+                                                                <xs:attribute name="item" type="xs:string" use="required"/>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                    </xs:sequence>
+                                                    <xs:attribute name="conditionItem" type="xs:string" use="required"/>
+                                                    <xs:attribute name="eq" type="xs:string" use="required"/>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="else">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="text">
+                                                            <xs:complexType>
+                                                                <xs:attribute name="item" type="xs:string" use="required"/>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                        <xs:attribute name="condition" type="xs:string" use="required"/>
+                                        <xs:attribute name="eq" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                            <xs:attribute name="collection" type="xs:string" use="required"/>
+                            <xs:attribute name="eachName" type="xs:string" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="if">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="text">
+                                    <xs:complexType>
+                                        <xs:attribute name="item" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                            <xs:attribute name="condition" type="xs:string" use="required"/>
+                            <xs:attribute name="eq" type="xs:string" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
