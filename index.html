@@ -50,7 +50,9 @@
     <p>If you are interested in digging into the internals of the stack, we have our source openly available in our <a href="https://github.com/medusa-ui">Github project repository</a> as well as <a href="https://medusa-ui.github.io/documentation/docs/category/internals/">thorough documentation</a> on how the internals of the framework operate.</p>
 
     <h2>What is the Medusa Stack?</h2>
-
+    
+    <img src="https://github.com/medusa-ui/phanes/raw/main/hydra-medusa-architecture.png" alt="Diagram of the medusa/hydra architecture. From left to right, a browser call goes through Hydra first. Hydra is marked as a combination API gateway, IDP and discovery service. It is public and would have DNS associated with it. It optionally connects to a user database and redis for discovery scaling. The graph then continues to the right, with different user flows connecting to seperate medusa instances. Each medusa instance provisions a part of the UI. Medusa services are deployed internally." style="width: 800px; margin-bottom: 15px;">
+    
     <p>The stack consists out of two major components:
 
     <p><strong>Medusa</strong>, a UI framework that will allow you to extend Thymeleaf into a bidirectional setup with tight integration between view and controller. In other words, you'll write individual micro-frontends in Medusa.</p>
