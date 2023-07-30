@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:m="https://www.getmedusa.io/"
+           targetNamespace="https://www.getmedusa.io"
+           elementFormDefault="qualified">
+
+  <!-- Define a simple type for the value of the custom attributes -->
+  <xs:simpleType name="customActionType">
+    <xs:restriction base="xs:string">
+      <!-- Add any specific restrictions for the attribute value here if needed -->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Define the complex type for elements that can have the custom attributes -->
+  <xs:complexType name="customActionElementType">
+    <xs:attribute name="m:click" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:change" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:enter" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:keyup" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:select" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:submit" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:upload" type="m:customActionType" use="optional"/>
+    <xs:attribute name="m:validation" type="m:customActionType" use="optional"/>
+    <!-- Add more custom attributes here, if needed -->
+  </xs:complexType>
+
+  <!-- Define the "m" namespace prefix for the custom attributes -->
+  <xs:attributeGroup name="mAttributes">
+    <xs:attribute ref="m:click" />
+    <xs:attribute ref="m:change" />
+    <xs:attribute ref="m:enter" />
+    <xs:attribute ref="m:keyup" />
+    <xs:attribute ref="m:select" />
+    <xs:attribute ref="m:submit" />
+    <xs:attribute ref="m:upload" />
+    <xs:attribute ref="m:validation" />
+    <!-- Add more custom attributes here, if needed -->
+  </xs:attributeGroup>
+
+  <!-- Use xs:any to specify that the custom attributes can occur on any element -->
+  <xs:element name="anyElement">
+    <xs:complexType>
+      <xs:any processContents="skip" namespace="##other" />
+      <xs:attributeGroup ref="m:mAttributes" />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
